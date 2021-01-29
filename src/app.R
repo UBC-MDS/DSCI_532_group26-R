@@ -7,7 +7,8 @@ library(tidyverse)
 library(GGally)
 library(plotly)
 
-m_data <- read_csv("data/processed/processed_survey.csv")
+#m_data <- read_csv("data/processed/processed_survey.csv")
+m_data <- readr::read_csv(here::here('data/processed', 'processed_survey.csv'))
 
 app <- Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 all_countries <- unique(m_data$Country)
@@ -161,4 +162,5 @@ app$callback(
 
 
 
-app$run_server(debug = T)
+#app$run_server(debug = T)
+app$run_server(host = '0.0.0.0')

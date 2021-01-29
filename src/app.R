@@ -11,7 +11,7 @@ m_data <- read_csv("data/processed/processed_survey.csv")
 
 app <- Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 all_countries <- unique(m_data$Country)
-some_countries <- unique(processed_data$Country)[1:5]
+some_countries <- unique(m_data$Country)[1:5]
 m_data$Timestamp <- as.Date(m_data$Timestamp, format= "%Y-%m-%d")
 sdate <- min(m_data$Timestamp)
 edate <- max(m_data$Timestamp)

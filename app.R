@@ -7,11 +7,12 @@ library(tidyverse)
 library(GGally)
 library(plotly)
 
-m_data <- read_csv("data/processed/processed_survey.csv")
+#m_data <- read_csv("data/processed/processed_survey.csv")
+m_data <- readr::read_csv(here::here('data/processed', 'processed_survey.csv'))
 
 app <- Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 all_countries <- unique(m_data$Country)
-some_countries <- unique(processed_data$Country)[1:5]
+some_countries <- unique(m_data$Country)[1:5]
 m_data$Timestamp <- as.Date(m_data$Timestamp, format= "%Y-%m-%d")
 sdate <- min(m_data$Timestamp)
 edate <- max(m_data$Timestamp)
@@ -161,4 +162,5 @@ app$callback(
 
 
 
-app$run_server(debug = T)
+#app$run_server(debug = T)
+app$run_server(host = '0.0.0.0')

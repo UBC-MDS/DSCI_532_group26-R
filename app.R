@@ -7,6 +7,7 @@ library(tidyverse)
 library(GGally)
 library(plotly)
 
+
 #m_data <- read_csv("data/processed/processed_survey.csv")
 m_data <- readr::read_csv(here::here('data/processed', 'processed_survey.csv'))
 
@@ -47,9 +48,9 @@ sidebar <- htmlDiv(list(
 
 
 
-CONTENT_STYLE <- list("margin-left" = "18rem","margin-right" = "2rem","padding" = "2rem 1rem")
+CONTENT_STYLE <- list("margin-left" = "12rem","margin-right" = "2rem","padding" = "2rem 1rem")
 
-content <- htmlDiv(list(dbcRow(list(dbcCol(dccGraph(id = 'country_bar', style= list(
+content <- dbcContainer(htmlDiv(list(dbcRow(list(dbcCol(dccGraph(id = 'country_bar', style= list(
                                         'border-width' = '0'))),
                                     dbcCol(dccGraph(id = 'fam_hist', style= list(
                                       'border-width' = '0'))))),
@@ -57,7 +58,7 @@ content <- htmlDiv(list(dbcRow(list(dbcCol(dccGraph(id = 'country_bar', style= l
                         dbcRow(list(dbcCol(dccGraph(id = 'sought_help', style= list(
                                       'border-width' = '0'))),
                                     dbcCol(dccGraph(id = 'benefits', style= list(
-                                      'border-width' = '0')))))), style = CONTENT_STYLE)
+                                      'border-width' = '0')))))), style = CONTENT_STYLE))
 
 
 app$layout(htmlDiv(list(sidebar, content)))

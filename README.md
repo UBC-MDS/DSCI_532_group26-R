@@ -7,7 +7,7 @@ Siqi Zhou | @roycezhou  |
 Chun Chieh(Jason) Chang| @jachang0628  | 
 
 ## Dashboard link
-TODO
+https://mental-health-dash.herokuapp.com/
 
 ## About
 Our app aims to present the statistics of people who worked in the tech sector and the frequency of mental illness among these people across different demographics and work cultures. We hope that by presenting these statistics, employers around the world can stop overlooking this issue and create a less stress-inducing workplace.
